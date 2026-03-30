@@ -1,4 +1,4 @@
-# rupca
+# rupca (rust PCA)
 
 `rupca` is a small Rust crate that mirrors the sparse centered PCA path used by Scanpy for sparse input with `zero_center=True`.
 
