@@ -1,7 +1,7 @@
 # rupca (rust PCA)
 
 `rupca` is a small Rust crate that mirrors the sparse centered PCA path used by Scanpy for sparse input with `zero_center=True`.
-It is compatible with both ordinary sparse inputs, such as logPF-normalized matrices, and PFlogPF / shifted-CLR inputs represented without densifying the matrix.
+It is compatible with both ordinary sparse inputs, such as logPF-normalized matrices, and PFlogPF / shifted-CLR inputs represented without densifying the matrix; see the [bioRxiv preprint](https://www.biorxiv.org/content/10.1101/2022.05.06.490859v3) (doi: `10.1101/2022.05.06.490859v3`).
 
 The implemented path is:
 
