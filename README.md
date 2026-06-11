@@ -20,6 +20,8 @@ The current public entrypoints are:
 - `pca_scanpy_sparse_csr(&CsrMatrix, ScanpyPcaParams) -> Result<ScanpyPcaResult>`
 - `pca_scanpy_dense(&DenseMatrix, ScanpyPcaParams) -> Result<ScanpyPcaResult>`
 - `pca_shifted_clr_sparse_csr(&ShiftedClrCsrMatrix, ScanpyPcaParams) -> Result<ScanpyPcaResult>`
+- with the optional `ruanndata` feature:
+  `pca_scanpy_ruanndata(&ruanndata::MatrixData, ScanpyPcaParams) -> Result<ScanpyPcaResult>`
 
 The plain sparse matrix format is a simple CSR container owned by `rupca`.
 The dense matrix format is row-major and uses direct centered dense SVD; dense
@@ -29,6 +31,9 @@ This keeps PFlogPF / shifted-CLR data as a sparse shifted-log matrix plus a row
 centering vector while preserving implicit column centering inside PCA.
 PFlogPF / shifted-CLR input should be supplied as `ShiftedClrCsrMatrix`, not as a
 dense matrix.
+The optional `ruanndata` feature lets `rupca` accept `ruanndata::MatrixData`
+directly, including `ShiftedClrCsr`, while keeping `ruanndata` itself generic and
+independent of `rupca`.
 
 ## Status
 

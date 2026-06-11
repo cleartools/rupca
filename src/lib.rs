@@ -1,4 +1,12 @@
 mod arpack_symm;
+#[cfg(feature = "ruanndata")]
+mod ruanndata_adapter;
+
+#[cfg(feature = "ruanndata")]
+pub use ruanndata_adapter::{
+    dense_from_ruanndata, pca_scanpy_ruanndata, shifted_clr_csr_from_ruanndata,
+    sparse_csr_from_ruanndata,
+};
 
 use arpack_symm::aup2::dsaup2_mode1;
 use nalgebra::{DMatrix, SymmetricEigen};

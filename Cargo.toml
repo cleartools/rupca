@@ -9,9 +9,14 @@ license = "BSD-2-Clause"
 name = "rupca"
 path = "src/lib.rs"
 
+[features]
+default = []
+ruanndata = ["dep:ruanndata"]
+
 [dependencies]
 nalgebra = "0.33"
 rand = "0.8"
+ruanndata = { git = "https://github.com/pachterlab/ruanndata", optional = true }
 thiserror = "2.0"
 
 [dev-dependencies]
