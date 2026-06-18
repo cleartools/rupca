@@ -104,7 +104,7 @@ impl CsrMatrix {
 
 /// Dense row-major matrix input for direct centered dense SVD.
 ///
-/// This is intended for ordinary dense matrices. PFlogPF / shifted-CLR input
+/// This is intended for ordinary dense matrices. PFlog / shifted-CLR input
 /// should use `ShiftedClrCsrMatrix` so the shifted dense values are not
 /// materialized.
 #[derive(Debug, Clone)]
@@ -567,7 +567,7 @@ fn pca_dense_centered_svd(x: &DenseMatrix, params: ScanpyPcaParams) -> Result<Sc
         n_features,
         n_components: n_keep,
         warnings: vec![
-            "input matrix is dense; using direct centered dense SVD. PFlogPF / shifted-CLR input should be supplied as ShiftedClrCsrMatrix rather than a dense matrix".to_string(),
+            "input matrix is dense; using direct centered dense SVD. PFlog / shifted-CLR input should be supplied as ShiftedClrCsrMatrix rather than a dense matrix".to_string(),
         ],
     })
 }
